@@ -7,7 +7,8 @@
     "push": "shopify theme push --path=theme",
     "pull": "shopify theme pull --path=theme",
     "dev": "npm run tailwind && shopify theme dev --path=theme",
-    "tailwind": "npx tailwindcss -i ./src/main.css -o ./theme/assets/main.css"
+    "tailwind": "npx tailwindcss -i ./src/main.css -o ./theme/assets/main.css",
+    "compile:ts": "npx ts-node generate-tabs-liquid.ts ./tabs/schema.ts ./tabs/content.liquid ./tabs/tabs.vanilla.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "@shopify/cli": "^3.46.2",
     "@shopify/theme": "^3.46.2",
     "esbuild": "^0.17.19",
+    "fs": "^0.0.1-security",
     "preact": "^10.15.1",
     "prettier": "^2.8.8",
     "prettier-eslint": "^15.0.1",

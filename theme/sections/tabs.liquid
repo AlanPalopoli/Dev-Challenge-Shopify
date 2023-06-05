@@ -1,30 +1,59 @@
+{% schema %}
+  {
+    "name": "Tabs",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "tab",
+        "name": "Tab",
+        "settings": [
+          {
+            "id": "tab_title",
+            "type": "text",
+            "label": "Tab Title",
+            "default": "Default tab text"
+          }, {
+            "id": "tab_content",
+            "type": "richtext",
+            "label": "Tab Content"
+          }, {
+            "id": "tab_color",
+            "type": "color",
+            "label": "Tab Color",
+            "default": "#000000"
+          }
+        ]
+      }
+    ],
+    "presets": []
+  }
+{% endschema %}
 <div class="tabs__container flex gap-2">
-  <button class="border rounded-md p-2" onclick="showTabText('tab1')">
-    Tab 1
-  </button>
-  <button class="border rounded-md p-2" onclick="showTabText('tab2')">
-    Tab 2
-  </button>
-  <button class="border rounded-md p-2" onclick="showTabText('tab3')">
-    Tab 3
-  </button>
+  {% for block in section.blocks %}
+    <button
+      class="border rounded-md p-2"
+      onclick="showTabText('tab{{ forloop.index }}')"
+      style="background-color: {{ block.settings.tab_color }};">
+      {{ block.settings.tab_title }}
+    </button>
+  {% endfor %}
 </div>
 
-<div id="tab1" class="tab">
-  <p>Tab 1 text</p>
-</div>
-<div id="tab2" class="tab" style="display:none">
-  <p>Tab 2 text</p>
-</div>
-<div id="tab3" class="tab" style="display:none">
-  <p>Tab 3 text</p>
-</div>
-
+{% for block in section.blocks %}
+  <div id="tab{{ forloop.index }}" class="tab hidden">
+    {{ block.settings.tab_content }}
+  </div>
+{% endfor %}
 <script>
   function showTabText(tabName) {
-    document.querySelectorAll('.tab').forEach(tab => {
+    document
+      .querySelectorAll('.tab')
+      .forEach(tab => {
         tab.style.display = "none";
       })
-      document.getElementById(tabName).style.display = "block"
+      document
+      .getElementById(tabName)
+      .style
+      .display = "block"
   }
 </script>
