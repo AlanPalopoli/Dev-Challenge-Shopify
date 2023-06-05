@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+
+  <meta charset="utf-8">
+
+  <!-- Title and description ================================================== -->
+  <title>
+    {{ page_title }}{% if current_page != null %} &mdash; {{ shop.name }}{% endif %}
+  </title>
+
+  {{ content_for_header }}
+</head>
+
+<body>
+
+  {{ content_for_layout }}
+
+{% comment %} Script js faltaría {% endcomment %}
+</body>
+</html>
