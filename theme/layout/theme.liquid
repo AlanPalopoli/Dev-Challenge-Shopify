@@ -7,7 +7,7 @@
   <title>
     {{ page_title }}{% if current_page != null %} &mdash; {{ shop.name }}{% endif %}
   </title>
-
+  {{ 'main.css' | asset_url | stylesheet_tag: preload: true }}
   {{ content_for_header }}
 </head>
 

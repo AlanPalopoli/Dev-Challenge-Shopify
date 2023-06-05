@@ -1,41 +1,30 @@
 <div class="tabs__container flex gap-2">
-  <button onclick="showTabText('tab1')">
-    Tab 1</button>
-  <button onclick="showTabText('tab2')">
-    Tab 2</button>
-  <button onclick="showTabText('tab3')">
-    Tab 3</button>
+  <button class="border rounded-md p-2" onclick="showTabText('tab1')">
+    Tab 1
+  </button>
+  <button class="border rounded-md p-2" onclick="showTabText('tab2')">
+    Tab 2
+  </button>
+  <button class="border rounded-md p-2" onclick="showTabText('tab3')">
+    Tab 3
+  </button>
 </div>
 
 <div id="tab1" class="tab">
-  <p>
-    Tab 1 text</p>
+  <p>Tab 1 text</p>
 </div>
-<div
-  id="tab2"
-  class="tab"
-  style="display:none">
-  <p>
-    Tab 2 text</p>
+<div id="tab2" class="tab" style="display:none">
+  <p>Tab 2 text</p>
 </div>
-<div
-  id="tab3"
-  class="tab"
-  style="display:none">
-  <p>
-    Tab 3 text</p>
+<div id="tab3" class="tab" style="display:none">
+  <p>Tab 3 text</p>
 </div>
 
 <script>
   function showTabText(tabName) {
-    document
-      .querySelectorAll('.tab')
-      .forEach(tab => {
+    document.querySelectorAll('.tab').forEach(tab => {
         tab.style.display = "none";
       })
-      document
-      .getElementById(tabName)
-      .style
-      .display = "block"
+      document.getElementById(tabName).style.display = "block"
   }
 </script>

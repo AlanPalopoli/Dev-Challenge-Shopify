@@ -6,7 +6,8 @@
   "scripts": {
     "push": "shopify theme push --path=theme",
     "pull": "shopify theme pull --path=theme",
-    "dev": "shopify theme dev --path=theme"
+    "dev": "npm run tailwind && shopify theme dev --path=theme",
+    "tailwind": "npx tailwindcss -i ./src/main.css -o ./theme/assets/main.css"
   },
   "keywords": [],
   "author": "",
