@@ -17,21 +17,21 @@ This repository contains the complete and functioning code for the following cha
 
 ### Installation & Usage
 - Clone the repository to your machine.
--Inside the command console, enter: 
+- Inside the command console, enter: 
 ```bash
 npm install
 ```
--Once the dependencies are installed, enter:
+- Once the dependencies are installed, enter:
 ```bash
 npm run compile:ts
 # to compile the .liquid file.
 ```
--Then enter the command: 
+- Then enter the command: 
 ```bash
 node esbuild.js
 # to compile and create the js file from Preact.
 ```
--Lastly, enter: 
+- Lastly, enter: 
 ```bash
 npm run dev
 # to start the project.
