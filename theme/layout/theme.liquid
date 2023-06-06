@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<head>
+  <head>
 
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <!-- Title and description ================================================== -->
-  <title>
-    {{ page_title }}{% if current_page != null %} &mdash; {{ shop.name }}{% endif %}
-  </title>
-  {{ 'main.css' | asset_url | stylesheet_tag: preload: true }}
-  {{ content_for_header }}
-</head>
+    <!-- Title and description ================================================== -->
+    <title>
+      {{ page_title }}{% if current_page != null %} &mdash; {{ shop.name }}{% endif %}
+    </title>
+    {{ 'main.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ content_for_header }}
+  </head>
 
-<body>
+  <body class="bg-[#F3F4F6]">
 
-  {{ content_for_layout }}
+    {{ content_for_layout }}
 
-{% comment %} Script js faltaría {% endcomment %}
-<div id="container-app"></div>
-<script src="{{ 'tabs.js' | asset_url }}" defer></script>
-</body>
+    <div id="container-app"></div>
+    <script src="{{ 'tabs.js' | asset_url }}" defer></script>
+  </body>
 </html>

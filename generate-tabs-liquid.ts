@@ -3,7 +3,6 @@ import { SectionSchema } from './tabs/schema';
 
 function generateLiquid(schema: SectionSchema, content: string, jsFile: string) {
     const jsContent = readFileSync(jsFile, 'utf-8');
-
     const liquid = `
     {% schema %}
     {
