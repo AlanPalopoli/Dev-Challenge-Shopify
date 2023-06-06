@@ -17,19 +17,19 @@ function generateLiquid(schema: SectionSchema, content: string, jsFile: string) 
             {
               "id": "tab_title",
               "type": "text",
-              "label": "${schema.text.label}",
-              "default": "${schema.text.default || 'Default tab text'}"
+              "label": "${schema.settings.text.label}",
+              "default": "${schema.settings.text.default || 'Default tab text'}"
             },
             {
               "id": "tab_content",
-              "type": "richtext",
-              "label": "${schema.content.label}"
+              "type": "textarea",
+              "label": "${schema.settings.content.label}"
             },
             {
               "id": "tab_color",
               "type": "color",
-              "label": "${schema.color.label}",
-              "default": "${schema.color.default || '#000000'}"
+              "label": "${schema.settings.color.label}",
+              "default": "${schema.settings.color.default || '#000000'}"
             }
           ]
         }
@@ -47,9 +47,14 @@ function generateLiquid(schema: SectionSchema, content: string, jsFile: string) 
 }
 
 const schema: SectionSchema = {
+  settings: {
     text: { type: 'text', label: 'Tab Title' },
-    content: { type: 'richtext', label: 'Tab Content' },
+    content: { type: 'textarea', label: 'Tab Content' },
     color: { type: 'color', label: 'Tab Color' }
+  },
+  blocks: [
+    
+  ]
 };
 
 const content = readFileSync('./tabs/content.liquid', 'utf-8');

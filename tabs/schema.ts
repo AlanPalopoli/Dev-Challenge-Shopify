@@ -1,5 +1,5 @@
 export interface RichTextInput {
-  type: 'richtext';
+  type: 'textarea';
   label: string;
   default?: "Tab Content";
 }
@@ -16,8 +16,16 @@ export interface ColorInput {
   default?: string;
 }
 
+export interface Blocks {
+  type: string;
+  settings: {
+    [key: string]: TextInput | RichTextInput | ColorInput
+  };
+}
+
 export interface SectionSchema {
-  text: TextInput;
-  content: RichTextInput;
-  color: ColorInput;
+  settings: {
+    [key: string]: TextInput | RichTextInput | ColorInput
+  };
+  blocks: Blocks[];
 }

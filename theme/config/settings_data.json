@@ -1,1 +1,17 @@
-[]
+{
+  "current": {
+    "sections": {
+      "tabs": {
+        "type": "tabs",
+        "custom_css": [
+
+        ],
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}
